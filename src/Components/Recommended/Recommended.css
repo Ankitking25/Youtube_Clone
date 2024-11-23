@@ -1,0 +1,39 @@
+.recommanded{
+    flex-basis:40%;
+    margin-top:40px;
+}
+
+
+
+
+.side-video-list img{
+    flex-basis:49%;
+    margin-bottom:5px;
+}  
+
+
+
+.side-video-list .box{
+    flex-basis: 48%;
+}
+
+.side-video-list .vid-info h4{
+    margin-bottom:5px;
+} 
+
+.side-video-list .vid-info{
+   flex-basis: 48%;
+   margin-left:10px;
+
+}
+ 
+.side-video-list .box img{
+    border-radius:5px;
+}
+
+
+.side-video-list{
+    display: flex;
+   
+    margin-left:20px;
+}

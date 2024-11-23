@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './Components/Navbar/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Video from './Pages/Video/Video';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+   const [side_bar, setSidebar] = useState(true);
+
+   return (
+      <BrowserRouter>
+         {/* Navbar should be outside of Routes */}
+         <Navbar setSidebar={setSidebar} />
+
+         {/* Routes should only contain Route components */}
+         <Routes>
+            <Route path='/' element={<Home side_bar={side_bar} />} />
+            <Route path='/delta/:categoryid/:videoid' element={<Video />} />
+         </Routes>
+      </BrowserRouter>
+   );
+};
 
 export default App;
